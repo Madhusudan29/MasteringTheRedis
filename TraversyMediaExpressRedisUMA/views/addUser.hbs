@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header }}
+<body>
+   {{> navbar}}
+    <div class="is-flex is-justify-content-space-around mt-2">
+      <div class="card" style="width: 350px" >
+        <div class="card-content">
+          <div class="field">
+            <form action="/user/add" method="post">
+              {{#if error}}
+                {{!-- <p class="help is-danger is-size-6 has-text-centered">This username is available</p> --}}
+                <p class="help is-danger is-size-6 has-text-centered">{{error}}</p>
+              {{/if}}
+              <p class="has-text-centered my-2" >
+                <label class="is-size-5 has-text-weight-bold">Add User</label>
+              </p>
+              <div class="control mb-3">
+                <label for="id" class="label">Id</label>
+                <input id="id" name="id" class="input is-success" type="text" placeholder="First Name">
+              </div>
+              <div class="control mb-3">
+                <label for="first_name" class="label">First Name</label>
+                <input id="first_name" name="first_name" class="input is-success" type="text" placeholder="First Name">
+              </div>
+              <div class="control mb-3">
+                <label for="last_name" class="label">Last Name</label>
+                <input id="last_name" name="last_name" class="input is-success" type="text" placeholder="Last Name">
+              </div>
+              <div class="control mb-3">
+                <label for="email" class="label">Email</label>
+                <input id="email" name="email" class="input is-success" type="text" placeholder="Email">
+              </div>
+              <div class="control mb-3">
+                <label for="phone" class="label">Phone</label>
+                <input id="phone" name="phone" class="input is-success" type="text" placeholder="Phone">
+              </div>
+              <div class="has-text-centered mt-4">
+               <button type="submit" class="button is-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+   {{> footer}}
+</body>
+</html>

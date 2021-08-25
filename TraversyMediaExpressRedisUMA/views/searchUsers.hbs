@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header }}
+<body>
+   {{> navbar}}
+    <div class="is-flex is-justify-content-space-around mt-4" >
+      <div class="card" style="width: 350px" >
+        <div class="card-content">
+          <div class="field">
+            <form action="/user/search" method="post">
+              {{#if error}}
+                {{!-- <p class="help is-danger is-size-6 has-text-centered">This username is available</p> --}}
+                <p class="help is-danger is-size-6 has-text-centered">{{error}}</p>
+              {{/if}}
+              <p class="has-text-centered my-2" >
+                <label for="search" class="is-size-5 has-text-weight-bold">Serch User</label>
+              </p>
+              <div class="control">
+                <input id="search" name="id" class="input is-success" type="text" placeholder="Text input">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+   {{> footer}}
+</body>
+</html>

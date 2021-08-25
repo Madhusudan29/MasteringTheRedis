@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header }}
+<body>
+   {{> navbar}}
+   <div class="is-flex is-justify-content-space-around mt-4" >
+      <div class="card" style="width: 350px" >
+         <div class="card-content">
+            {{#if user}}
+            <h1 class="is-size-5 has-text-weight-bold">
+               {{user.first_name}}
+               {{user.last_name}}
+               [{{user.id}}]
+            </h1>
+            <ul class="mt-2">
+               <li>
+                  <strong class="has-text-weight-semibold" >
+                  Email:
+                  </strong>
+                  {{user.email}}
+               </li>
+               <li>
+                  <strong class="has-text-weight-semibold">
+                  Phone:
+                  </strong>
+                  {{user.phone}}
+               </li>
+            </ul>
+            <div class="is-flex is-justify-content-space-around mt-4" >
+               <a href="/" class="button is-primary">Back</a>
+               <form action="/user/delete/{{user.id}}?_method=DELETE" method="post">
+                  <button type="submit" class="button is-danger">Delete</button>
+               </form>
+            </div>
+            {{/if}}
+      </div>
+   </div>
+   {{> footer}}
+</body>
+</html>
